@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/api/v1/authenticate")
+@RequestMapping("/api/v1")
 public class JwtAuthenticationController {
 
     private AuthenticationManager authenticationManager;
@@ -32,7 +32,7 @@ public class JwtAuthenticationController {
         this.cardService = cardService;
     }
 
-    @RequestMapping(value = "/card/{card}/pin/{pin}", method = RequestMethod.POST, produces = {"application/json"})
+    @RequestMapping(value = "/authenticate", method = RequestMethod.POST, produces = {"application/json"})
     public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {
 
         final Card card = cardService.LoginByCardNumAndPin(authenticationRequest.getCard(), authenticationRequest.getPin() );
