@@ -58,6 +58,8 @@ public class CardServiceImpl implements CardService {
     public Card add(Card object) {
         if (String.valueOf(object.getCardNumber()).length() != 16)
             throw new BadRequestException(112, "Invalid Card Number");
+        if (String.valueOf(object.getPinOne()).length() != 4 || (String.valueOf(object.getPinTwo()).length() <= 4 && String.valueOf(object.getPinTwo()).length() >= 6))
+            throw new BadRequestException(109, "Invalid pin");
 
         Card card = cardRepository.save(object);
         return card;
@@ -67,6 +69,8 @@ public class CardServiceImpl implements CardService {
     public Card update(Card object) {
         if (String.valueOf(object.getCardNumber()).length() != 16)
             throw new BadRequestException(112, "Invalid Card Number");
+        if (String.valueOf(object.getPinOne()).length() != 4 || (String.valueOf(object.getPinTwo()).length() <= 4 && String.valueOf(object.getPinTwo()).length() >= 6))
+            throw new BadRequestException(109, "Invalid pin");
 
         Card card = cardRepository.save(object);
         return card;
@@ -76,6 +80,8 @@ public class CardServiceImpl implements CardService {
     public Card update(Long cardId, Card card) {
         if (String.valueOf(card.getCardNumber()).length() != 16)
             throw new BadRequestException(112, "Invalid Card Number");
+        if (String.valueOf(card.getPinOne()).length() != 4 || (String.valueOf(card.getPinTwo()).length() <= 4 && String.valueOf(card.getPinTwo()).length() >= 6))
+            throw new BadRequestException(109, "Invalid pin");
 
         Optional<Card> optional = cardRepository.findById(cardId);
         if (!optional.isPresent()) throw new NotAcceptableException("Card not found");
@@ -141,9 +147,7 @@ public class CardServiceImpl implements CardService {
 
         if (String.valueOf(cardNumber).length() != 16)
             throw new BadRequestException(107, "Invalid Card Number");
-        if (amount <= 10)
-            throw new BadRequestException(108, "Invalid amount");
-        if (String.valueOf(pinOne).length()  != 4)
+        if (String.valueOf(pinOne).length() != 4)
             throw new BadRequestException(109, "Invalid pin");
         if (type.equals(TransactionType.TRANSFER))
             throw new BadRequestException(110, "Invalid transaction type");
@@ -159,11 +163,17 @@ public class CardServiceImpl implements CardService {
                 balance = account.getBalance();
                 transactions.setType(TransactionType.BALANCE);
             } else if (type.equals(TransactionType.DEPOSIT) && (amount != 0)) {
+                if (amount <= 10)
+                    throw new BadRequestException(108, "Invalid amount");
+
                 balance = account.getBalance() + Long.valueOf(amount);
                 account.setBalance(balance);
                 accountService.update(account);
                 transactions.setType(TransactionType.DEPOSIT);
             } else if (type.equals(TransactionType.WITHDRAW) && (amount != 0)) {
+                if (amount <= 10)
+                    throw new BadRequestException(108, "Invalid amount");
+
                 balance = account.getBalance() - Long.valueOf(amount);
                 if (balance < 0) {
                     throw new NotAcceptableException("Withdraw limited ...!");
@@ -205,7 +215,7 @@ public class CardServiceImpl implements CardService {
             throw new BadRequestException(107, "Invalid Card Number");
         if (amount <= 50)
             throw new BadRequestException(108, "Invalid amount");
-        if (String.valueOf(pinOne).length()  != 4 || String.valueOf(pinTwo).length()  != 4)
+        if (String.valueOf(pinOne).length() != 4 || (String.valueOf(pinTwo).length() <= 4 && String.valueOf(pinTwo).length() >= 6))
             throw new BadRequestException(109, "Invalid pin");
         if (!type.equals(TransactionType.TRANSFER))
             throw new BadRequestException(110, "Invalid transaction type");
