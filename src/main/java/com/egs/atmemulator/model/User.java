@@ -49,7 +49,7 @@ public class User {
 
     @NotNull
     @Column(name = "mobile")
-    @Size(min = 8, max = 16, message = "Email must be between 8 & 16")
+    @Size(min = 8, max = 16, message = "Mobile must be between 8 & 16")
     private int mobile;
 
     @Column(name = "phone_number")
