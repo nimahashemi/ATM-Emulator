@@ -1,6 +1,7 @@
 package com.egs.atmemulator.controller;
 
 import com.egs.atmemulator.dto.CardDTO;
+import com.egs.atmemulator.dto.ResponseDTO;
 import com.egs.atmemulator.dto.StandardOperationDTO;
 import com.egs.atmemulator.dto.TransferDTO;
 import com.egs.atmemulator.enums.*;
@@ -69,9 +70,9 @@ public class CardController {
     }
 
     @RequestMapping(value = "/card/operation/{type}", method = RequestMethod.POST, produces = {"application/json"})
-    public ResponseEntity<Long> operation(@PathVariable("type") TransactionType type,
-                                          @Valid @RequestBody StandardOperationDTO standardOperationDTO) {
-        Long balance = cardService.standardOperation(standardOperationDTO.getCardNumber(),
+    public ResponseEntity<ResponseDTO> operation(@PathVariable("type") TransactionType type,
+                                                 @Valid @RequestBody StandardOperationDTO standardOperationDTO) {
+        ResponseDTO balance = cardService.standardOperation(standardOperationDTO.getCardNumber(),
                 standardOperationDTO.getPinOne(),
                 standardOperationDTO.getAmount(),
                 type);
@@ -79,8 +80,8 @@ public class CardController {
     }
 
     @RequestMapping(value = "/card/transfer", method = RequestMethod.POST, produces = {"application/json"})
-    public ResponseEntity<Long> transfer(@Valid @RequestBody TransferDTO transferDTO) throws ParseException {
-        Long balance = cardService.transfer(transferDTO.getSrcCard(),
+    public ResponseEntity<ResponseDTO> transfer(@Valid @RequestBody TransferDTO transferDTO) throws ParseException {
+        ResponseDTO balance = cardService.transfer(transferDTO.getSrcCard(),
                 transferDTO.getDestCard(),
                 transferDTO.getPinOne(),
                 transferDTO.getPinTwo(),

@@ -1,6 +1,7 @@
 package com.egs.atmemulator.service.impl;
 
 import com.egs.atmemulator.dto.CardDTO;
+import com.egs.atmemulator.dto.ResponseDTO;
 import com.egs.atmemulator.enums.CardStatus;
 import com.egs.atmemulator.enums.TransactionStatus;
 import com.egs.atmemulator.enums.TransactionType;
@@ -142,7 +143,7 @@ public class CardServiceImpl implements CardService {
 
 
     @Override
-    public Long standardOperation(Long cardNumber, int pinOne, int amount, TransactionType type) {
+    public ResponseDTO standardOperation(Long cardNumber, int pinOne, int amount, TransactionType type) {
         Long balance = Long.valueOf(0);
 
         if (String.valueOf(cardNumber).length() != 16)
@@ -203,11 +204,12 @@ public class CardServiceImpl implements CardService {
         }
         transactionsService.add(transactions);
 
-        return balance;
+        ResponseDTO response = new ResponseDTO(balance);
+        return response;
     }
 
     @Override
-    public Long transfer(Long srcCard, Long destCard, int pinOne, int pinTwo, int amount, TransactionType type) throws ParseException {
+    public ResponseDTO transfer(Long srcCard, Long destCard, int pinOne, int pinTwo, int amount, TransactionType type) throws ParseException {
         Long srcBalance = Long.valueOf(0);
         Long dstBalance = Long.valueOf(0);
 
@@ -278,6 +280,7 @@ public class CardServiceImpl implements CardService {
             throw new NotAcceptableException("Card or Pin is invalid");
         }
         transactionsService.add(transactions);
-        return srcBalance;
+        ResponseDTO response = new ResponseDTO(srcBalance);
+        return response;
     }
 }
