@@ -48,11 +48,11 @@ public class User {
     private Date birthdate;
 
     @NotNull
-    @Column(name = "mobile")
+    @Column(name = "mobile", length = 11)
     @Size(min = 8, max = 16, message = "Mobile must be between 8 & 16")
     private int mobile;
 
-    @Column(name = "phone_number")
+    @Column(name = "phone_number", length = 11)
     private int phoneNumber;
 
     @Column(name = "email")

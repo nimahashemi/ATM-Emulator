@@ -38,15 +38,15 @@ public class Transactions {
     private Date date;
 
     @NotNull
-    @Column(name = "source_card_number")
+    @Column(name = "source_card_number", length = 20)
     @Size(min = 16, max = 16)
     private Long sourceCardNumber;
 
-    @Column(name = "destination_card_number")
+    @Column(name = "destination_card_number", length = 20)
     @Size(min = 16, max = 16)
     private Long destinationCardNumber;
 
-    @Column(name = "amount")
+    @Column(name = "amount", length = 20)
     private Long amount;
 
     @NotNull

@@ -23,7 +23,7 @@ public class Account {
     private Long id;
 
     @NotNull
-    @JoinColumn(name = "user_id")
+    @Column(name = "user_id", length = 20)
     private Long userId;
 
     @NotNull
@@ -32,12 +32,12 @@ public class Account {
     private AccountType accountType;
 
     @NotNull
-    @Column(name = "account_number", unique = true)
+    @Column(name = "account_number", unique = true, length = 20)
     @Size(min = 6, max = 16, message = "Account number must be between 6 & 16")
     private Long accountNumber;
 
     @NotNull
-    @Column(name = "balance")
+    @Column(name = "balance", length = 20)
     @Builder.Default
     @Size(min = 4)
     private Long balance;

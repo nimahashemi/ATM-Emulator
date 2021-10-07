@@ -25,26 +25,26 @@ public class Card {
     private Long id;
 
     @NotNull
-    @Column(name = "account_id")
+    @Column(name = "account_id", length = 20)
     private Long accountId;
 
     @NotNull
-    @Column(name = "card_number", unique = true)
+    @Column(name = "card_number", unique = true, length = 20)
     @Size(min = 16, max = 16, message = "Card number must be 16 digit")
     private Long cardNumber;
 
     @NotNull
-    @Column(name = "pin_one")
+    @Column(name = "pin_one", length = 11)
     @Size(min = 4, max = 4, message = "PIN must be 4 digits")
     private int pinOne;
 
     @NotNull
-    @Column(name = "pin_two")
+    @Column(name = "pin_two", length = 11)
     @Size(min = 6, max = 6, message = "PIN must be 6 digits")
     private int pinTwo;
 
     @NotNull
-    @Column(name = "cvv")
+    @Column(name = "cvv", length = 11)
     @Size(min = 3, max = 4, message = "PIN must be 6 digits")
     private int cvv;
 
