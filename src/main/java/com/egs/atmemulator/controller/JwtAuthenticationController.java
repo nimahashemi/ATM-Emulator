@@ -32,6 +32,13 @@ public class JwtAuthenticationController {
         this.cardService = cardService;
     }
 
+    /**
+     * Generate JWT Token API
+     *
+     * @param authenticationRequest
+     * @return
+     * @throws Exception
+     */
     @RequestMapping(value = "/authenticate", method = RequestMethod.POST, produces = {"application/json"})
     public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {
 

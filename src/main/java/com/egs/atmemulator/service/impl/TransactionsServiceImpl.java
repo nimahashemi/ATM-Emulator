@@ -26,12 +26,21 @@ public class TransactionsServiceImpl implements TransactionsService {
         this.transactionsRepository = transactionsRepository;
     }
 
-
+    /**
+     *
+     * @param transactions
+     * @return
+     */
     @Override
     public Transactions add(Transactions transactions) {
         return transactionsRepository.save(transactions);
     }
 
+    /**
+     *
+     * @param transactions
+     * @return
+     */
     @Override
     public List<Transactions> search(Transactions transactions) {
         return transactionsRepository.search(transactions.getUserId(),
@@ -43,6 +52,12 @@ public class TransactionsServiceImpl implements TransactionsService {
                 transactions.getAmount(),
                 transactions.getTransactionStatus());
     }
+
+    /**
+     *
+     * @param transactionDTO
+     * @return
+     */
     public List<Transactions> search(TransactionDTO transactionDTO) {
         return transactionsRepository.search(transactionDTO.getUserId(),
                 transactionDTO.getType(),
@@ -54,21 +69,43 @@ public class TransactionsServiceImpl implements TransactionsService {
                 transactionDTO.getTransactionStatus());
     }
 
+    /**
+     *
+     * @param userId
+     * @return
+     */
     @Override
     public List<Transactions> findByUserId(Long userId) {
         return transactionsRepository.findByUserId(userId);
     }
 
+    /**
+     *
+     * @param cardNumber
+     * @return
+     */
     @Override
     public List<Transactions> findByCardNumber(Long cardNumber) {
         return transactionsRepository.findBySourceCardNumberAndDestinationCardNumber(cardNumber, cardNumber);
     }
 
+    /**
+     *
+     * @param transactionType
+     * @return
+     */
     @Override
     public List<Transactions> findByType(TransactionType transactionType) {
         return transactionsRepository.findByType(transactionType);
     }
 
+    /**
+     *
+     * @param sourceCard
+     * @param date
+     * @param status
+     * @return
+     */
     @Override
     public List<Transactions> findBySourceCardNumberAndDateAndTransactionStatus(Long sourceCard, Date date, TransactionStatus status) {
         return transactionsRepository.findBySourceCardNumberAndDateAndTransactionStatus(sourceCard, date, status);

@@ -11,6 +11,10 @@ public class NotAcceptableException extends RuntimeException {
         super("Request rejected");
     }
 
+    /**
+     *
+     * @param cause
+     */
     public NotAcceptableException(String cause) {
         super("Request rejected");
         this.causeMessage = cause;

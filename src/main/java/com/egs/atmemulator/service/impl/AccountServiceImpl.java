@@ -32,11 +32,20 @@ public class AccountServiceImpl implements AccountService {
         this.userService = userService;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public List<Account> findAll() {
         return accountRepository.findAll();
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     @Override
     public Account findById(Long id) {
         Optional<Account> optional = accountRepository.findById(id);
@@ -44,6 +53,11 @@ public class AccountServiceImpl implements AccountService {
         return optional.get();
     }
 
+    /**
+     *
+     * @param object
+     * @return
+     */
     @Override
     public Account add(Account object) {
         int accLength =String.valueOf(object.getAccountNumber()).length();
@@ -54,6 +68,11 @@ public class AccountServiceImpl implements AccountService {
         return account;
     }
 
+    /**
+     *
+     * @param object
+     * @return
+     */
     @Override
     public Account update(Account object) {
         int accLength =String.valueOf(object.getAccountNumber()).length();
@@ -64,6 +83,12 @@ public class AccountServiceImpl implements AccountService {
         return account;
     }
 
+    /**
+     *
+     * @param accountId
+     * @param account
+     * @return
+     */
     @Override
     public Account update(Long accountId, Account account){
         int accLength =String.valueOf(account.getAccountNumber()).length();
@@ -76,6 +101,10 @@ public class AccountServiceImpl implements AccountService {
         return object;
     }
 
+    /**
+     *
+     * @param object
+     */
     @Override
     public void delete(Account object) {
         Account account = object;
@@ -83,6 +112,10 @@ public class AccountServiceImpl implements AccountService {
         accountRepository.save(account);
     }
 
+    /**
+     *
+     * @param id
+     */
     @Override
     public void deleteById(Long id) {
         Optional<Account> optional = accountRepository.findById(id);
@@ -92,6 +125,11 @@ public class AccountServiceImpl implements AccountService {
         accountRepository.save(account);
     }
 
+    /**
+     *
+     * @param object
+     * @return
+     */
     @Override
     public List<Account> search(Account object) {
         return accountRepository.search(object.getUserId(),
@@ -101,6 +139,11 @@ public class AccountServiceImpl implements AccountService {
                 object.getStatus());
     }
 
+    /**
+     *
+     * @param accountDTO
+     * @return
+     */
     @Override
     public List<Account> inquiry(AccountDTO accountDTO) {
         User user = userService.findById(accountDTO.getUserId());

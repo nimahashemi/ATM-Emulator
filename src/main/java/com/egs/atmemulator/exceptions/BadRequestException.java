@@ -12,16 +12,31 @@ public class BadRequestException extends RuntimeException {
         super();
     }
 
+    /**
+     *
+     * @param message
+     */
     public BadRequestException(String message) {
         super(message);
         this.code = 103;
     }
 
+    /**
+     *
+     * @param code
+     * @param message
+     */
     public BadRequestException(int code, String message) {
         super(message);
         this.code = code;
     }
 
+    /**
+     *
+     * @param code
+     * @param message
+     * @param result
+     */
     public BadRequestException(int code, String message, Object result) {
         super(message);
         this.code = code;

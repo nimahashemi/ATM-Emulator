@@ -21,16 +21,29 @@ public class UserServiceImpl implements UserService {
 
     private UserRepository userRepository;
 
+    /**
+     *
+     * @param userRepository
+     */
     @Autowired
     public UserServiceImpl(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public List<User> findAll() {
         return userRepository.findAll();
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     @Override
     public User findById(Long id) {
         Optional<User> optional = userRepository.findById(id);
@@ -38,18 +51,34 @@ public class UserServiceImpl implements UserService {
         return optional.get();
     }
 
+    /**
+     *
+     * @param object
+     * @return
+     */
     @Override
     public User add(User object) {
         User user = userRepository.save(object);
         return user;
     }
 
+    /**
+     *
+     * @param object
+     * @return
+     */
     @Override
     public User update(User object) {
         User user = userRepository.save(object);
         return user;
     }
 
+    /**
+     *
+     * @param userId
+     * @param user
+     * @return
+     */
     @Override
     public User update(Long userId, User user) {
         Optional<User> optional = userRepository.findById(userId);
@@ -59,6 +88,10 @@ public class UserServiceImpl implements UserService {
         return object;
     }
 
+    /**
+     *
+     * @param object
+     */
     @Override
     public void delete(User object) {
         User user = object;
@@ -66,6 +99,10 @@ public class UserServiceImpl implements UserService {
         userRepository.save(user);
     }
 
+    /**
+     *
+     * @param id
+     */
     @Override
     public void deleteById(Long id) {
         Optional<User> optional = userRepository.findById(id);
@@ -75,6 +112,11 @@ public class UserServiceImpl implements UserService {
         userRepository.save(user);
     }
 
+    /**
+     *
+     * @param object
+     * @return
+     */
     @Override
     public List<User> search(User object) {
         return userRepository.search(object.getFirstName(),

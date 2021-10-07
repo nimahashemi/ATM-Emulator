@@ -25,6 +25,15 @@ public class AccountController {
         this.accountService = accountService;
     }
 
+    /**
+     *
+     * @param user_id
+     * @param accountType
+     * @param accountNumber
+     * @param balance
+     * @param status
+     * @return
+     */
     @RequestMapping(value = "/accounts", method = RequestMethod.GET, produces = {"application/json"})
     public List<Account> getAllAccounts(@RequestParam(value = "user_id", required = false) Long user_id,
                                         @RequestParam(value = "accountType", required = false) AccountType accountType,
@@ -40,17 +49,33 @@ public class AccountController {
         return accountService.inquiry(accountDTO);
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     @RequestMapping(value = "/account/{id}", method = RequestMethod.GET, produces = {"application/json"})
     public Account findAccountById(@PathVariable("id") Long id) {
         return accountService.findById(id);
     }
 
+    /**
+     *
+     * @param account
+     * @return
+     */
     @RequestMapping(value = "/account", method = RequestMethod.POST, produces = {"application/json"})
     public ResponseEntity<Account> add(@Valid @RequestBody Account account) {
         Account result = accountService.add(account);
         return ResponseEntity.ok(result);
     }
 
+    /**
+     *
+     * @param id
+     * @param account
+     * @return
+     */
     @RequestMapping(value = "/account/{id}", method = RequestMethod.PUT, produces = {"application/json"})
     public ResponseEntity<Object> update(@PathVariable("id") Long id,
                                          @Valid @RequestBody Account account) {
@@ -58,6 +83,11 @@ public class AccountController {
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     @RequestMapping(value = "/account/{id}", method = RequestMethod.DELETE, produces = {"application/json"})
     public ResponseEntity<Object> delete(@PathVariable("id") Long id) {
         accountService.deleteById(id);

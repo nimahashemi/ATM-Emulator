@@ -27,6 +27,20 @@ public class UserController {
         this.userService = userService;
     }
 
+    /**
+     *
+     * @param firstName
+     * @param lastname
+     * @param gender
+     * @param birthdate
+     * @param mobile
+     * @param phoneNumber
+     * @param email
+     * @param identityType
+     * @param identity
+     * @param status
+     * @return
+     */
     @RequestMapping(value = "/users", method = RequestMethod.GET, produces = {"application/json"})
     public List<User> getAllUsers(@RequestParam(value = "firstName", required = false) String firstName,
                                   @RequestParam(value = "lastname", required = false) String lastname,
@@ -52,17 +66,33 @@ public class UserController {
         return userService.search(user);
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     @RequestMapping(value = "/user/{id}", method = RequestMethod.GET, produces = {"application/json"})
     public User findUserById(@PathVariable("id") Long id) {
         return userService.findById(id);
     }
 
+    /**
+     *
+     * @param user
+     * @return
+     */
     @RequestMapping(value = "/user", method = RequestMethod.POST, produces = {"application/json"})
     public ResponseEntity<User> add(@Valid @RequestBody User user) {
         User result = userService.add(user);
         return ResponseEntity.ok(result);
     }
 
+    /**
+     *
+     * @param id
+     * @param user
+     * @return
+     */
     @RequestMapping(value = "/user/{id}", method = RequestMethod.PUT, produces = {"application/json"})
     public ResponseEntity<Object> update(@PathVariable("id") Long id,
                                          @Valid @RequestBody User user) {
@@ -70,6 +100,11 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     @RequestMapping(value = "/user/{id}", method = RequestMethod.DELETE, produces = {"application/json"})
     public ResponseEntity<Object> delete(@PathVariable("id") Long id) {
         userService.deleteById(id);

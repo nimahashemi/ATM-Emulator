@@ -43,11 +43,20 @@ public class CardServiceImpl implements CardService {
         this.accountService = accountService;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public List<Card> findAll() {
         return cardRepository.findAll();
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     @Override
     public Card findById(Long id) {
         Optional<Card> optional = cardRepository.findById(id);
@@ -55,6 +64,11 @@ public class CardServiceImpl implements CardService {
         return optional.get();
     }
 
+    /**
+     *
+     * @param object
+     * @return
+     */
     @Override
     public Card add(Card object) {
         if (String.valueOf(object.getCardNumber()).length() != 16)
@@ -66,6 +80,11 @@ public class CardServiceImpl implements CardService {
         return card;
     }
 
+    /**
+     *
+     * @param object
+     * @return
+     */
     @Override
     public Card update(Card object) {
         if (String.valueOf(object.getCardNumber()).length() != 16)
@@ -77,6 +96,12 @@ public class CardServiceImpl implements CardService {
         return card;
     }
 
+    /**
+     *
+     * @param cardId
+     * @param card
+     * @return
+     */
     @Override
     public Card update(Long cardId, Card card) {
         if (String.valueOf(card.getCardNumber()).length() != 16)
@@ -91,6 +116,10 @@ public class CardServiceImpl implements CardService {
         return object;
     }
 
+    /**
+     *
+     * @param object
+     */
     @Override
     public void delete(Card object) {
         Card card = object;
@@ -98,6 +127,10 @@ public class CardServiceImpl implements CardService {
         cardRepository.save(card);
     }
 
+    /**
+     *
+     * @param id
+     */
     @Override
     public void deleteById(Long id) {
         Optional<Card> optional = cardRepository.findById(id);
@@ -107,6 +140,11 @@ public class CardServiceImpl implements CardService {
         cardRepository.save(card);
     }
 
+    /**
+     *
+     * @param object
+     * @return
+     */
     @Override
     public List<Card> search(Card object) {
         return cardRepository.search(object.getAccountId(),
@@ -116,6 +154,11 @@ public class CardServiceImpl implements CardService {
                 object.getStatus());
     }
 
+    /**
+     *
+     * @param cardDTO
+     * @return
+     */
     @Override
     public List<Card> inquiry(CardDTO cardDTO) {
         Account account = accountService.findById(cardDTO.getAccountId());
@@ -127,6 +170,12 @@ public class CardServiceImpl implements CardService {
                 cardDTO.getStatus());
     }
 
+    /**
+     *
+     * @param cardNum
+     * @param pin
+     * @return
+     */
     @Override
     public Card LoginByCardNumAndPin(String cardNum, String pin) {
         if (String.valueOf(cardNum).length() != 16)
@@ -141,7 +190,14 @@ public class CardServiceImpl implements CardService {
         return card;
     }
 
-
+    /**
+     * Do the three standard operation (BALANCE, DEPOSIT, WITHDRAW)
+     * @param cardNumber
+     * @param pinOne
+     * @param amount
+     * @param type
+     * @return
+     */
     @Override
     public ResponseDTO standardOperation(Long cardNumber, int pinOne, int amount, TransactionType type) {
         Long balance = Long.valueOf(0);
@@ -208,6 +264,17 @@ public class CardServiceImpl implements CardService {
         return response;
     }
 
+    /**
+     * Do Card Transfer Operation
+     * @param srcCard
+     * @param destCard
+     * @param pinOne
+     * @param pinTwo
+     * @param amount
+     * @param type
+     * @return
+     * @throws ParseException
+     */
     @Override
     public ResponseDTO transfer(Long srcCard, Long destCard, int pinOne, int pinTwo, int amount, TransactionType type) throws ParseException {
         Long srcBalance = Long.valueOf(0);

@@ -30,6 +30,15 @@ public class CardController {
         this.cardService = cardService;
     }
 
+    /**
+     *
+     * @param account_id
+     * @param cardNumber
+     * @param from
+     * @param to
+     * @param status
+     * @return
+     */
     @RequestMapping(value = "/cards", method = RequestMethod.GET, produces = {"application/json"})
     public List<Card> getAllUsers(@RequestParam(value = "account_id", required = false) Long account_id,
                                   @RequestParam(value = "cardNumber", required = false) Long cardNumber,
@@ -45,17 +54,33 @@ public class CardController {
         return cardService.inquiry(cardDTO);
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     @RequestMapping(value = "/card/{id}", method = RequestMethod.GET, produces = {"application/json"})
     public Card findUserById(@PathVariable("id") Long id) {
         return cardService.findById(id);
     }
 
+    /**
+     *
+     * @param card
+     * @return
+     */
     @RequestMapping(value = "/card", method = RequestMethod.POST, produces = {"application/json"})
     public ResponseEntity<Card> add(@Valid @RequestBody Card card) {
         Card result = cardService.add(card);
         return ResponseEntity.ok(result);
     }
 
+    /**
+     *
+     * @param id
+     * @param card
+     * @return
+     */
     @RequestMapping(value = "/card/{id}", method = RequestMethod.PUT, produces = {"application/json"})
     public ResponseEntity<Object> update(@PathVariable("id") Long id,
                                          @Valid @RequestBody Card card) {
@@ -63,12 +88,23 @@ public class CardController {
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     @RequestMapping(value = "/card/{id}", method = RequestMethod.DELETE, produces = {"application/json"})
     public ResponseEntity<Object> delete(@PathVariable("id") Long id) {
         cardService.deleteById(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
+    /**
+     *
+     * @param type
+     * @param standardOperationDTO
+     * @return
+     */
     @RequestMapping(value = "/card/operation/{type}", method = RequestMethod.POST, produces = {"application/json"})
     public ResponseEntity<ResponseDTO> operation(@PathVariable("type") TransactionType type,
                                                  @Valid @RequestBody StandardOperationDTO standardOperationDTO) {
@@ -79,6 +115,12 @@ public class CardController {
         return ResponseEntity.ok(balance);
     }
 
+    /**
+     *
+     * @param transferDTO
+     * @return
+     * @throws ParseException
+     */
     @RequestMapping(value = "/card/transfer", method = RequestMethod.POST, produces = {"application/json"})
     public ResponseEntity<ResponseDTO> transfer(@Valid @RequestBody TransferDTO transferDTO) throws ParseException {
         ResponseDTO balance = cardService.transfer(transferDTO.getSrcCard(),
