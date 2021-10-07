@@ -27,7 +27,7 @@ public interface CardRepository extends JpaRepository<Card, Long> {
                       CardStatus status);
 
     Card findByCardNumberAndPinOneAndStatus(Long cardNumber, int pinOne, CardStatus status);
-    Card findByCardNumberAndPinTwoAndStatus(Long cardNumber, int pinTwo, CardStatus status);
+    Card findByCardNumberAndPinTwoAndStatusAndExpiryDateLessThan(Long cardNumber, int pinTwo, CardStatus status, Date expirtDate);
     Card findByCardNumberAndStatus(Long cardNumber, CardStatus status);
 
 }

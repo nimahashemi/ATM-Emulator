@@ -13,6 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.text.ParseException;
 import java.util.Date;
 import java.util.List;
 
@@ -78,7 +79,7 @@ public class CardController {
     }
 
     @RequestMapping(value = "/card/transfer", method = RequestMethod.POST, produces = {"application/json"})
-    public ResponseEntity<Long> transfer(@Valid @RequestBody TransferDTO transferDTO) {
+    public ResponseEntity<Long> transfer(@Valid @RequestBody TransferDTO transferDTO) throws ParseException {
         Long balance = cardService.transfer(transferDTO.getSrcCard(),
                 transferDTO.getDestCard(),
                 transferDTO.getPinOne(),

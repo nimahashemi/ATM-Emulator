@@ -18,6 +18,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -195,7 +197,7 @@ public class CardServiceImpl implements CardService {
     }
 
     @Override
-    public Long transfer(Long srcCard, Long destCard, int pinOne, int pinTwo, int amount, TransactionType type) {
+    public Long transfer(Long srcCard, Long destCard, int pinOne, int pinTwo, int amount, TransactionType type) throws ParseException {
         Long srcBalance = Long.valueOf(0);
         Long dstBalance = Long.valueOf(0);
 
@@ -221,7 +223,12 @@ public class CardServiceImpl implements CardService {
                 srcBalance = srcAccount.getBalance() - Long.valueOf(amount);
                 dstBalance = dstAccount.getBalance() + Long.valueOf(amount);
 
-                Card secondCheck = cardRepository.findByCardNumberAndPinTwoAndStatus(srcCard, pinTwo, CardStatus.ACTIVE);
+                SimpleDateFormat dateFormatStr = new SimpleDateFormat("yyyy-MM-DD");
+                String dateStr = dateFormatStr.format(new Date());
+                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM");
+                Date now = dateFormat.parse(dateStr);
+                Card secondCheck = cardRepository.findByCardNumberAndPinTwoAndStatusAndExpiryDateLessThan(srcCard, pinTwo, CardStatus.ACTIVE, now);
+
 
                 if (srcBalance > 0 && secondCheck != null) {
 
