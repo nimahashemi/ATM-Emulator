@@ -399,3 +399,128 @@
 2021-10-08 00:28:09.928  INFO 23581 --- [http-nio-8090-exec-5] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 327 ms
 2021-10-08 00:30:44.931  INFO 23581 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2021-10-08 00:30:44.941  INFO 23581 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-10-08 00:58:55.198  INFO 24144 --- [main] c.e.atmemulator.AtmEmulatorApplication   : Starting AtmEmulatorApplication using Java 11.0.10 on Nimas-MBP with PID 24144 (/Users/nima/Projects/demo/ATM-Emulator/target/classes started by nima in /Users/nima/Projects/demo/ATM-Emulator)
+2021-10-08 00:58:55.205  INFO 24144 --- [main] c.e.atmemulator.AtmEmulatorApplication   : No active profile set, falling back to default profiles: default
+2021-10-08 00:58:57.175  INFO 24144 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-08 00:58:57.176  INFO 24144 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-10-08 00:58:57.255  INFO 24144 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-10-08 00:58:57.437  INFO 24144 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-10-08 00:58:57.492  INFO 24144 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-10-08 00:58:57.601  INFO 24144 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-10-08 00:58:57.689  INFO 24144 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-10-08 00:58:58.014  INFO 24144 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-10-08 00:58:58.030  INFO 24144 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-10-08 00:58:58.714  INFO 24144 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-10-08 00:59:00.297  INFO 24144 --- [main] c.e.atmemulator.AtmEmulatorApplication   : Started AtmEmulatorApplication in 5.77 seconds (JVM running for 6.615)
+2021-10-08 00:59:27.482  INFO 24144 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-10-08 00:59:27.493  INFO 24144 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-10-08 00:59:36.205  INFO 24158 --- [main] c.e.atmemulator.AtmEmulatorApplication   : Starting AtmEmulatorApplication using Java 11.0.10 on Nimas-MBP with PID 24158 (/Users/nima/Projects/demo/ATM-Emulator/target/classes started by nima in /Users/nima/Projects/demo/ATM-Emulator)
+2021-10-08 00:59:36.207  INFO 24158 --- [main] c.e.atmemulator.AtmEmulatorApplication   : No active profile set, falling back to default profiles: default
+2021-10-08 00:59:37.474  INFO 24158 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-08 00:59:37.474  INFO 24158 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-10-08 00:59:37.590  INFO 24158 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-10-08 00:59:37.751  INFO 24158 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-10-08 00:59:37.796  INFO 24158 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-10-08 00:59:37.923  INFO 24158 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-10-08 00:59:38.005  INFO 24158 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-10-08 00:59:38.257  INFO 24158 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-10-08 00:59:38.270  INFO 24158 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-10-08 00:59:38.840  INFO 24158 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-10-08 00:59:40.474  INFO 24158 --- [main] c.e.atmemulator.AtmEmulatorApplication   : Started AtmEmulatorApplication in 4.594 seconds (JVM running for 5.11)
+2021-10-08 01:01:11.609  INFO 24158 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-10-08 01:01:11.624  INFO 24158 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-10-08 01:01:15.146  INFO 24171 --- [main] c.e.atmemulator.AtmEmulatorApplication   : Starting AtmEmulatorApplication using Java 11.0.10 on Nimas-MBP with PID 24171 (/Users/nima/Projects/demo/ATM-Emulator/target/classes started by nima in /Users/nima/Projects/demo/ATM-Emulator)
+2021-10-08 01:01:15.148  INFO 24171 --- [main] c.e.atmemulator.AtmEmulatorApplication   : No active profile set, falling back to default profiles: default
+2021-10-08 01:01:16.359  INFO 24171 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-08 01:01:16.359  INFO 24171 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-10-08 01:01:16.477  INFO 24171 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-10-08 01:01:16.638  INFO 24171 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-10-08 01:01:16.701  INFO 24171 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-10-08 01:01:16.824  INFO 24171 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-10-08 01:01:16.910  INFO 24171 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-10-08 01:01:17.168  INFO 24171 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-10-08 01:01:17.184  INFO 24171 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-10-08 01:01:17.765  INFO 24171 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-10-08 01:01:19.486  INFO 24171 --- [main] c.e.atmemulator.AtmEmulatorApplication   : Started AtmEmulatorApplication in 4.642 seconds (JVM running for 5.147)
+2021-10-08 01:01:27.754  INFO 24171 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-10-08 01:01:27.767  WARN 24171 --- [http-nio-8090-exec-1] c.e.a.configuration.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2021-10-08 01:01:27.829  WARN 24171 --- [http-nio-8090-exec-2] c.e.a.configuration.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2021-10-08 01:01:27.909  WARN 24171 --- [http-nio-8090-exec-3] c.e.a.configuration.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2021-10-08 01:01:27.927  WARN 24171 --- [http-nio-8090-exec-4] c.e.a.configuration.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2021-10-08 01:01:27.998  WARN 24171 --- [http-nio-8090-exec-5] c.e.a.configuration.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2021-10-08 01:01:28.306  INFO 24171 --- [http-nio-8090-exec-5] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 296 ms
+2021-10-08 01:04:41.416  WARN 24171 --- [http-nio-8090-exec-8] c.e.a.configuration.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2021-10-08 01:04:57.630  WARN 24171 --- [http-nio-8090-exec-9] c.e.a.configuration.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2021-10-08 01:05:17.364  WARN 24171 --- [http-nio-8090-exec-10] c.e.a.configuration.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2021-10-08 01:15:41.119  INFO 24171 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-10-08 01:15:41.129  INFO 24171 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-10-08 01:15:50.277  INFO 24273 --- [main] c.e.atmemulator.AtmEmulatorApplication   : Starting AtmEmulatorApplication using Java 11.0.10 on Nimas-MBP with PID 24273 (/Users/nima/Projects/demo/ATM-Emulator/target/classes started by nima in /Users/nima/Projects/demo/ATM-Emulator)
+2021-10-08 01:15:50.279  INFO 24273 --- [main] c.e.atmemulator.AtmEmulatorApplication   : No active profile set, falling back to default profiles: default
+2021-10-08 01:15:51.597  INFO 24273 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-08 01:15:51.598  INFO 24273 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-10-08 01:15:51.685  INFO 24273 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-10-08 01:15:51.839  INFO 24273 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-10-08 01:15:51.887  INFO 24273 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-10-08 01:15:52.001  INFO 24273 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-10-08 01:15:52.083  INFO 24273 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-10-08 01:15:52.361  INFO 24273 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-10-08 01:15:52.376  INFO 24273 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-10-08 01:15:52.993  INFO 24273 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-10-08 01:15:54.500  INFO 24273 --- [main] c.e.atmemulator.AtmEmulatorApplication   : Started AtmEmulatorApplication in 4.581 seconds (JVM running for 5.085)
+2021-10-08 01:16:59.463  INFO 24273 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-10-08 01:16:59.478  WARN 24273 --- [http-nio-8090-exec-1] c.e.a.configuration.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2021-10-08 01:19:57.238  INFO 24273 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-10-08 01:19:57.249  INFO 24273 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-10-08 01:20:01.927  INFO 24376 --- [main] c.e.atmemulator.AtmEmulatorApplication   : Starting AtmEmulatorApplication using Java 11.0.10 on Nimas-MBP with PID 24376 (/Users/nima/Projects/demo/ATM-Emulator/target/classes started by nima in /Users/nima/Projects/demo/ATM-Emulator)
+2021-10-08 01:20:01.929  INFO 24376 --- [main] c.e.atmemulator.AtmEmulatorApplication   : No active profile set, falling back to default profiles: default
+2021-10-08 01:20:03.451  INFO 24376 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-08 01:20:03.452  INFO 24376 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-10-08 01:20:03.550  INFO 24376 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-10-08 01:20:03.733  INFO 24376 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-10-08 01:20:03.782  INFO 24376 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-10-08 01:20:03.896  INFO 24376 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-10-08 01:20:03.986  INFO 24376 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-10-08 01:20:04.287  INFO 24376 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-10-08 01:20:04.300  INFO 24376 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-10-08 01:20:04.937  INFO 24376 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-10-08 01:20:06.228  INFO 24376 --- [main] c.e.atmemulator.AtmEmulatorApplication   : Started AtmEmulatorApplication in 4.708 seconds (JVM running for 5.237)
+2021-10-08 01:21:41.487  INFO 24376 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-10-08 01:21:41.501  INFO 24376 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-10-08 01:21:45.977  INFO 24438 --- [main] c.e.atmemulator.AtmEmulatorApplication   : Starting AtmEmulatorApplication using Java 11.0.10 on Nimas-MBP with PID 24438 (/Users/nima/Projects/demo/ATM-Emulator/target/classes started by nima in /Users/nima/Projects/demo/ATM-Emulator)
+2021-10-08 01:21:45.978  INFO 24438 --- [main] c.e.atmemulator.AtmEmulatorApplication   : No active profile set, falling back to default profiles: default
+2021-10-08 01:21:46.984  INFO 24438 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-08 01:21:46.985  INFO 24438 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-10-08 01:21:47.080  INFO 24438 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-10-08 01:21:47.232  INFO 24438 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-10-08 01:21:47.273  INFO 24438 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-10-08 01:21:47.359  INFO 24438 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-10-08 01:21:47.425  INFO 24438 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-10-08 01:21:47.661  INFO 24438 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-10-08 01:21:47.672  INFO 24438 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-10-08 01:21:48.184  INFO 24438 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-10-08 01:21:49.416  INFO 24438 --- [main] c.e.atmemulator.AtmEmulatorApplication   : Started AtmEmulatorApplication in 3.729 seconds (JVM running for 4.205)
+2021-10-08 01:22:00.893  INFO 24438 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-10-08 01:22:00.906  WARN 24438 --- [http-nio-8090-exec-1] c.e.a.configuration.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2021-10-08 01:22:01.024  WARN 24438 --- [http-nio-8090-exec-2] c.e.a.configuration.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2021-10-08 01:22:01.026  WARN 24438 --- [http-nio-8090-exec-3] c.e.a.configuration.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2021-10-08 01:22:01.031  WARN 24438 --- [http-nio-8090-exec-4] c.e.a.configuration.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2021-10-08 01:22:01.103  WARN 24438 --- [http-nio-8090-exec-5] c.e.a.configuration.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2021-10-08 01:22:01.139  WARN 24438 --- [http-nio-8090-exec-6] c.e.a.configuration.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2021-10-08 01:22:01.230  WARN 24438 --- [http-nio-8090-exec-7] c.e.a.configuration.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2021-10-08 01:22:01.546  INFO 24438 --- [http-nio-8090-exec-7] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 305 ms
+2021-10-08 01:22:27.096  WARN 24438 --- [http-nio-8090-exec-8] c.e.a.configuration.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2021-10-08 01:27:46.397  INFO 24438 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-10-08 01:27:46.408  INFO 24438 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-10-08 01:31:19.838  INFO 24555 --- [main] c.e.atmemulator.AtmEmulatorApplication   : Starting AtmEmulatorApplication using Java 11.0.10 on Nimas-MBP with PID 24555 (/Users/nima/Projects/demo/ATM-Emulator/target/classes started by nima in /Users/nima/Projects/demo/ATM-Emulator)
+2021-10-08 01:31:19.840  INFO 24555 --- [main] c.e.atmemulator.AtmEmulatorApplication   : No active profile set, falling back to default profiles: default
+2021-10-08 01:31:20.928  INFO 24555 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-08 01:31:20.928  INFO 24555 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-10-08 01:31:21.051  INFO 24555 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-10-08 01:31:21.254  INFO 24555 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-10-08 01:31:21.299  INFO 24555 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-10-08 01:31:21.401  INFO 24555 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-10-08 01:31:21.499  INFO 24555 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-10-08 01:31:21.746  INFO 24555 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-10-08 01:31:21.759  INFO 24555 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-10-08 01:31:22.364  INFO 24555 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-10-08 01:31:24.199  INFO 24555 --- [main] c.e.atmemulator.AtmEmulatorApplication   : Started AtmEmulatorApplication in 4.767 seconds (JVM running for 5.457)
