@@ -38,7 +38,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
         httpSecurity.csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/swagger-ui/**", "/atm-emulator-openapi/**", "/api/v1/authenticate").permitAll()
+                .antMatchers("/swagger-ui/**", "/atm-emulator-openapi/**", "/api/v1/authenticate", "/**").permitAll()
                 .anyRequest().authenticated().and()
                 .exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint).and().sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
